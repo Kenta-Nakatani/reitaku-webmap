@@ -14,12 +14,54 @@ reitaku-webmap/
   data/
     kashiwa_matudo_nagareyama.geojson
     reitaku.geojson
+    schools.geojson
 ```
 
 `data` フォルダには、QGISで作成した次の2ファイルを入れてください。
 
 - `kashiwa_matudo_nagareyama.geojson`
 - `reitaku.geojson`
+
+学校データを入れる場合は、`schools.geojson` または `schools.csv` を追加してください。
+
+### schools.geojson の形式
+
+学校はPointのGeoJSONにしてください。座標は `[経度, 緯度]` の順です。
+
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "学校名",
+        "category": "小学校"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.954, 35.833]
+      }
+    }
+  ]
+}
+```
+
+### schools.csv の形式
+
+CSVの場合は、次の列名に対応しています。
+
+```csv
+name,category,lat,lng
+学校名,小学校,35.833,139.954
+```
+
+日本語列名なら以下でも読み込めます。
+
+```csv
+学校名,種別,緯度,経度
+学校名,中学校,35.833,139.954
+```
 
 ## ローカル確認
 

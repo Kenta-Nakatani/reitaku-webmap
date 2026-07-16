@@ -182,6 +182,7 @@ p {
 }
 
 main {
+  position: relative;
   height: calc(100vh - 88px);
 }
 
@@ -264,6 +265,58 @@ main {
   line-height: 1.5;
 }
 
+.stats-panel {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 900;
+  width: min(320px, calc(100vw - 32px));
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(23, 32, 38, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(23, 32, 38, 0.14);
+}
+
+.stats-panel h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.stats-panel dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 0;
+}
+
+.stats-panel dl div {
+  padding: 10px;
+  border: 1px solid #d7e0e4;
+  border-radius: 6px;
+  background: #f7fafb;
+}
+
+.stats-panel dt {
+  color: #60707a;
+  font-size: 12px;
+}
+
+.stats-panel dd {
+  margin: 3px 0 0;
+  color: #172026;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.stats-panel p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
 @media (max-width: 720px) {
   .topbar {
     min-height: 132px;
@@ -283,5 +336,10 @@ main {
 
   .legend {
     justify-content: flex-start;
+  }
+
+  .stats-panel {
+    left: 10px;
+    bottom: 10px;
   }
 }
